@@ -1,17 +1,19 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Miruken</id>
+    <id>Improving.Highway.Data.Scope</id>
     <version>$version$</version>
-    <title>Miruken</title>
+    <title>Improving Highway Data Scope</title>
     <authors>cneuwirt,provenstyle</authors>
     <owners>cneuwirt,provenstyle</owners>
-    <licenseUrl>https://github.com/Miruken-DotNet/Miruken/blob/master/LICENSE.txt</licenseUrl>
-    <projectUrl>https://github.com/Miruken-DotNet/Miruken</projectUrl>
-    <iconUrl>https://avatars0.githubusercontent.com/u/20844317</iconUrl>
+    <licenseUrl>https://github.com/improving/Improving.Highway.Data.Scope/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/improving/Improving.Highway.Data.Scope</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Core Miruken</description>
-    <copyright>Copyright 2016</copyright>
-    <tags>Miruken miruken</tags>
+    <description>A scoped DataContext implementation for Highway.Data and Entity Framework</description>
+    <copyright>Copyright 2017</copyright>
+    <tags>Improving Highway EntityFramework Scope</tags>
+    <dependencies>
+      <dependency id="Highway.Data.EntityFramework" />
+    </dependencies>
   </metadata>
 </package>
