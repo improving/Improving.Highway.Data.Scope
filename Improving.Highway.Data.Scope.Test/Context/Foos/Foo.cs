@@ -1,4 +1,4 @@
-namespace Improving.Highway.Data.Scope.Test.Context
+namespace Improving.Highway.Data.Scope.Test.Context.Foos
 {
     public class Foo
     {

@@ -1,19 +1,11 @@
 ﻿namespace Improving.Highway.Data.Scope.Test
 {
-    using System;
-    using System.Linq;
-    using System.Text;
-    using Castle.MicroKernel;
-    using Castle.MicroKernel.Handlers;
-    using Castle.MicroKernel.Registration;
-    using Castle.Windsor;
-    using Castle.Windsor.Diagnostics;
     using Context;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Scope;
 
     [TestClass]
-    public class RepositoryInstallerTests
+    public class RepositoryInstallerTests: TestScenario
     {
         //[TestMethod]
         //public void ContainerHasAllDependenciesRegistered()
@@ -47,12 +39,8 @@
         [TestMethod]
         public void CanResolveARepositoryOfT()
         {
-            //Arrange
-            var container = new WindsorContainer()
-                .Install(new RepositoryInstaller(Classes.FromThisAssembly()));
-
             //Act
-            var repository = container.Resolve<IRepository<ITestDomain>>();
+            var repository = Container.Resolve<IRepository<ITestDomain>>();
 
             //Assert
             Assert.IsNotNull(repository);

@@ -1,6 +1,7 @@
 namespace Improving.Highway.Data.Scope.Test.Context
 {
     using System.Data.Entity;
+    using Foos;
 
     public class TestDomainContextInitializer : DropCreateDatabaseIfModelChanges<TestDomainContext>
     {

@@ -70,7 +70,7 @@ namespace Improving.Highway.Data.Scope
                     ? _dbContextFactory.CreateDbContext<TDomain>()
                     : Activator.CreateInstance<IDomainContext<TDomain>>();
 
-                _initializedDbContexts.Add(requestedType, (IDomainContext<IDomain>)dbContext);
+                _initializedDbContexts.Add(requestedType, (IDomainContext<IDomain>) dbContext);
 
                 if (_readOnly)
                 {

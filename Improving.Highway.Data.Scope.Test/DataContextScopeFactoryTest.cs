@@ -1,21 +1,15 @@
 ﻿namespace Improving.Highway.Data.Scope.Test
 {
-    using Castle.MicroKernel.Registration;
-    using Castle.Windsor;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Scope;
 
     [TestClass]
-    public class DbContextScopeFactoryTests
+    public class DbContextScopeFactoryTests : TestScenario
     {
         [TestMethod]
         public void CanResolveDbContextScope()
         {
-            //Arrange
-            var container = new WindsorContainer()
-                .Install(new RepositoryInstaller(Classes.FromThisAssembly()));
-
-            var factory = container.Resolve<IDbContextScopeFactory>();
+           var factory = Container.Resolve<IDbContextScopeFactory>();
 
             //Act
             var dbContextScope = factory.Create();
