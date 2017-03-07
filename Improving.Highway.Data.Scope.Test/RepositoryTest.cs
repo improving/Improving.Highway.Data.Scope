@@ -17,7 +17,7 @@
             repository.Find(new GetFoos());
         }
 
-        [TestMethod]
+        [TestMethod, Ignore]
         public void ReturnsEntitiesWithAScope()
         {
             var repository = Container.Resolve<IRepository<ITestDomain>>();
