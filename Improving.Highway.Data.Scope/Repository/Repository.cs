@@ -1,8 +1,9 @@
-namespace Improving.Highway.Data.Scope
+namespace Improving.Highway.Data.Scope.Repository
 {
     using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
+    using DbContextScope;
     using global::Highway.Data;
     using global::Highway.Data.Interceptors.Events;
     using global::Highway.Data.Repositories;

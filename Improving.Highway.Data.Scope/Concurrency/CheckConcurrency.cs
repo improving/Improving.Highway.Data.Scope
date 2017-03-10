@@ -2,6 +2,7 @@
 {
     using System.Data.Entity.Core;
     using System.Linq;
+    using DbContextScope;
     using FluentValidation;
     using MediatR;
 

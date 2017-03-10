@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Core;
     using System.Linq;
-    using Scope;
+    using DbContextScope;
 
     public static class ConcurrencyExtensions
     {

@@ -5,6 +5,7 @@
     using Castle.Windsor;
     using Context;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using global::Improving.Highway.Data.Scope.Repository;
 
     public abstract class TestScenario
     {

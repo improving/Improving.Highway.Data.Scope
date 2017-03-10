@@ -2,7 +2,7 @@
 {
     using Context;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Scope;
+    using Repository;
 
     [TestClass]
     public class RepositoryInstallerTests: TestScenario

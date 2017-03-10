@@ -6,7 +6,7 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Improving.Highway.Data.Scope
+namespace Improving.Highway.Data.Scope.DbContextScope
 {
     using System;
     using System.Data;

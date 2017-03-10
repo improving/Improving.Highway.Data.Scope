@@ -1,7 +1,7 @@
 ﻿namespace Improving.Highway.Data.Scope.Test
 {
+    using Improving.Highway.Data.Scope.DbContextScope;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Scope;
 
     [TestClass]
     public class DbContextScopeFactoryTests : TestScenario

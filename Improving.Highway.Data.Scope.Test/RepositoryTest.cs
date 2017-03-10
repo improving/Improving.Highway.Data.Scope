@@ -5,7 +5,7 @@
     using Context;
     using Context.Foos;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Scope;
+    using Repository;
 
     [TestClass]
     public class RepositoryTest : TestScenario

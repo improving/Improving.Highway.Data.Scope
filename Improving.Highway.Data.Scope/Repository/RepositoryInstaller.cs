@@ -1,8 +1,9 @@
-﻿namespace Improving.Highway.Data.Scope
+﻿namespace Improving.Highway.Data.Scope.Repository
 {
     using Castle.MicroKernel.Registration;
     using Castle.MicroKernel.SubSystems.Configuration;
     using Castle.Windsor;
+    using DbContextScope;
     using global::Highway.Data;
     using Component = Castle.MicroKernel.Registration.Component;
 
@@ -21,7 +22,7 @@
                 Component.For<IDbContextFactory>().ImplementedBy<DbContextFactory>(),
                 Component.For<IDbContextScopeFactory>().ImplementedBy<DbContextScopeFactory>(),
                 Component.For<IAmbientDbContextLocator>().ImplementedBy<AmbientDbContextLocator>(),
-                Component.For(typeof (IRepository<>)).ImplementedBy(typeof (Repository<>))
+                Component.For(typeof (global::Improving.Highway.Data.Scope.Repository.IRepository<>)).ImplementedBy(typeof (global::Improving.Highway.Data.Scope.Repository.Repository<>))
             );
 
             foreach (var assemebly in _fromAssemblies)

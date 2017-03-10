@@ -1,4 +1,4 @@
-﻿namespace Improving.Highway.Data.Scope
+﻿namespace Improving.Highway.Data.Scope.DbContextScope
 {
     using System;
     using System.Data.Entity;
