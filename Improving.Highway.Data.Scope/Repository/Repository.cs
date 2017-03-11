@@ -2,6 +2,7 @@ namespace Improving.Highway.Data.Scope.Repository
 {
     using System;
     using System.Collections.Generic;
+    using System.Data.Entity;
     using System.Threading.Tasks;
     using DbContextScope;
     using global::Highway.Data;
@@ -12,6 +13,10 @@ namespace Improving.Highway.Data.Scope.Repository
         where T : class , IDomain
     {
         IDbContextScopeFactory Scopes { get; }
+
+        Task<T1> FetchByIdAsync<T1>(int id) where T1 : class, IEntity;
+
+        Task<T1> FetchByIdAsync<T1>(int? id) where T1 : class, IEntity;
     }
 
     public class Repository<T> : IRepository<T>
@@ -19,17 +24,18 @@ namespace Improving.Highway.Data.Scope.Repository
     {
         private readonly IAmbientDbContextLocator _ambientDbContextLocator;
 
-        public IDomainContext<T> DomainContext => _context;
-
-        public IUnitOfWork Context => _context;
 
         public Repository(IDbContextScopeFactory scopeFactory, IAmbientDbContextLocator ambientDbContextLocator)
         {
-            Scopes            = scopeFactory;
+            Scopes = scopeFactory;
             _ambientDbContextLocator = ambientDbContextLocator;
         }
 
-        public IDbContextScopeFactory Scopes { get; }
+        #region IDomainRepository<T>
+
+        public IDomainContext<T> DomainContext => _context;
+
+        public IUnitOfWork Context => _context;
 
         private IDomainContext<T> _context
         {
@@ -145,5 +151,23 @@ namespace Improving.Highway.Data.Scope.Repository
         {
             AfterCommand?.Invoke(this, e);
         }
+
+        #endregion
+
+        #region  IRepository<T>
+
+        public IDbContextScopeFactory Scopes { get; }
+
+        public Task<T1> FetchByIdAsync<T1>(int id) where T1 : class, IEntity
+        {
+            return _context.AsQueryable<T1>().SingleOrDefaultAsync(t => t.Id == id);
+        }
+
+        public Task<T1> FetchByIdAsync<T1>(int? id) where T1 : class, IEntity
+        {
+            return id.HasValue ? FetchByIdAsync<T1>(id.Value) : null;
+        }
+
+        #endregion
     }
 }
