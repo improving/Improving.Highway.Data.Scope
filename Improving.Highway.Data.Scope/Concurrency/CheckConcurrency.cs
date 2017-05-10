@@ -2,22 +2,21 @@
 {
     using System.Data.Entity.Core;
     using System.Linq;
-    using DbContextScope;
     using FluentValidation;
     using MediatR;
 
     public abstract class CheckConcurrency<TEntity, TRes>
-        : CheckConcurrency<TEntity, TRes, UpdateResource<TRes, int>>
+        : CheckConcurrency<TEntity, TRes, UpdateResource<TRes, int?>>
         where TEntity : IEntity, IRowVersioned
-        where TRes : Resource<int>
+        where TRes : Resource<int?>
     {
     }
 
     public abstract class CheckConcurrency<TEntity, TRes, TAction>
         : AbstractValidator<TAction>
         where TEntity : IEntity, IRowVersioned
-        where TAction : UpdateResource<TRes, int>
-        where TRes    : Resource<int>
+        where TAction : UpdateResource<TRes, int?>
+        where TRes    : Resource<int?>
     {
         protected CheckConcurrency()
         {
