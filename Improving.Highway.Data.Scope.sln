@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Improving.Highway.Data.Scope", "Improving.Highway.Data.Scope\Improving.Highway.Data.Scope.csproj", "{B1B9CC96-05F1-4289-88F4-10AABE82F515}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Improving.Highway.Data.Scope", "Source\Improving.Highway.Data.Scope\Improving.Highway.Data.Scope.csproj", "{B1B9CC96-05F1-4289-88F4-10AABE82F515}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Improving.Highway.Data.Scope.Test", "Improving.Highway.Data.Scope.Test\Improving.Highway.Data.Scope.Test.csproj", "{B307AC70-69A3-4538-88A1-DF248A7A2639}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Improving.Highway.Data.Scope.Test", "Test\Improving.Highway.Data.Scope.Test\Improving.Highway.Data.Scope.Test.csproj", "{B307AC70-69A3-4538-88A1-DF248A7A2639}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
